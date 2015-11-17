@@ -13,4 +13,4 @@ Now you can connect to the machine using:
 vagrant ssh
 
 The machine has all needed packages to run the Ansible 101 workshop:
-git@github.com:penguinjournals/ansible-101.git
+[Ansible 101](https://github.com/penguinjournals/ansible-101)
