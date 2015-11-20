@@ -19,7 +19,7 @@ Once you are inside the virtual machine you should do:
 
 cd /vagrant
 
-git clone git@github.com:penguinjournals/ansible-101.git
+git clone https://github.com/penguinjournals/ansible-101.git
 
 
 The machine has all needed packages to run the Ansible 101 workshop:
