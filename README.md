@@ -5,8 +5,12 @@
 ### Step 1.
 Install [Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
+We'll use it for creating and destroying virtual machines on your computer easily.
+
 ### Step 2.
 Install [Vagrant](http://www.vagrantup.com/downloads)
+
+The machines we'll use during the workshop will be created and managed using vagrant.
 
 ### Step 3.
 Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
@@ -14,8 +18,8 @@ Install [Ansible](http://docs.ansible.com/ansible/intro_installation.html)
 ### Verification.
 
 - Clone/download the [workshop repository](https://github.com/penguinjournals/ansible-101)
-- From inside task1 folder run "vagrant up" (you'll need internet in this step)
-- When the machine has started up run "ansible all ping", you should get this:
+- From inside task1 folder run `vagrant up` (you'll need internet in this step)
+- When the machine has started up run `ansible all -m ping`, you should get this:
 ```
 task1 | success >> {
     "changed": false,
@@ -28,7 +32,7 @@ If you get some error like:
 
 Run:
 
-chmod 400 insecure_private_key
+`chmod 400 insecure_private_key`
 
 ## Windows
 
@@ -46,16 +50,36 @@ The machines we'll use during the workshop will be created and managed using vag
 Clone/download this repository to your computer
 
 ### Step 4.
-Run "vagrant up" from the root folder of the repository (*)
+Run `vagrant up` from the root folder of the repository
 
-### Step 5.
-Now you can connect to the machine using:
+Now you can connect to the machine using `vagrant ssh`
 
-vagrant ssh
+### Verification.
 
+- Clone/download the [workshop repository](https://github.com/penguinjournals/ansible-101)
+- From inside task1 folder run "vagrant up" (you'll need internet in this step)
+- From inside the vagrant-control-machine (remember the `vagrant ssh` on Step 4) type:
 
-Once you are inside the virtual machine you should do:
+```
+cd vagrant
+git clone https://github.com/penguinjournals/ansible-101
+cd task1
+ansible all -m ping
+```
 
-cd /vagrant
+You should get something like:
+```
+task1 | success >> {
+    "changed": false,
+    "ping": "pong"
+}
+```
+If you get some error like:
 
-git clone https://github.com/penguinjournals/ansible-101.git
+`task1 | FAILED => private_key_file (./insecure_private_key) is group-readable or world-readable and thus insecure - you will probably get an SSH failure`
+
+Run:
+
+`chmod 400 insecure_private_key`
+
+If you have any problem contact me at twitter [@penguinjournals](http://penguinjournals.com/penguinjournals) or via email at dgonzalezdiez [at] gmail [dot] com.
