@@ -23,8 +23,11 @@ task1 | success >> {
 }
 ``` 
 If you get some error like:
+
 `task1 | FAILED => private_key_file (./insecure_private_key) is group-readable or world-readable and thus insecure - you will probably get an SSH failure`
+
 Run:
+
 chmod 400 insecure_private_key
 
 ## Windows
