@@ -30,6 +30,16 @@ If you get some error like:
 
 `task1 | FAILED => private_key_file (./insecure_private_key) is group-readable or world-readable and thus insecure - you will probably get an SSH failure`
 
+or like this:
+
+```
+task1 | UNREACHABLE! => {
+    "changed": false,
+    "msg": "ERROR! SSH Error: data could not be sent to the remote host. Make sure this host can be reached over ssh",
+    "unreachable": true
+}
+```
+
 Run:
 
 `chmod 400 insecure_private_key`
